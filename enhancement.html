@@ -1,83 +1,131 @@
-
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <title>Progressive</title>
-  <style type="text/css">
-    body {
-      font: 125%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: 2em;
-      background: rgb(244, 245, 244);
-      color: rgb(0, 1, 0); /* @text-color */
-    }
-    a[href] {
-      color: rgb(110, 160, 26); /* @link-color */
-      text-decoration: none;
-    }
-    a[href]:hover,
-    a[href]:active,
-    a[href]:focus {
-      text-decoration: underline;
-    }
-    a[href]:visited {
-      color: #333;
-    }
-  </style>
+  <title>It’s easier to build in layers</title>
+  <link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css' />
+  <link href='shared.css' rel='stylesheet' type='text/css' />
 </head>
 <body>
 
-<h1>Progressive</h1>
+<h1>It’s easier to build in layers</h1>
 
-## Building a Website in Layers
+<h2>Content first</h2>
 
+<p>Start by deciding what features and content you want to have. Add them to your document as plain text.</p>
 
-Content First
-Start by deciding what content and features you want to have. Add them to your document as plain text.
+<pre><code>http://amazon.com/hobbes.jpg
 
-Styling
-Add CSS for readability, and then for layout, and finally for device-specific things like hover states. Test on different devices along the way, to see if the content and features can be read and used.
+Van Gogh would’ve sold more than one painting if he’d put tigers in them. –Hobbes</code></pre>
 
-Scripting
-Add JavaScript as needed for special interaction and features that aren’t available using HTML and CSS.
+<p>Mark up your content to give meaning to the text and indicate relationships.</p>
 
-Use plain HTML elements as a starting point.
+<pre><code>&lt;figure&gt;
 
-Try to leave things out of the markup that aren’t part of the core content. Keep it simple. 
+  &lt;img src="http://amazon.com/hobbes.jpg" alt="" /&gt;
 
-If something requires JavaScript to operate and isn’t essential (there are other ways to accomplish the task), use JavaScript to add it later.
+  &lt;caption&gt;Van Gogh would’ve sold more than one painting if he’d put tigers in them. –Hobbes&lt;/caption&gt;
 
-[Example with JavaScript template blocks]
+&lt;/figure&gt;</code></pre>
 
-Use styles to move the markup in the direction of your design.
+<h2>And then style</h2>
 
-Test along the way to see if the content and page features work well on a few different size devices.
+<p>Use styles to move the markup in the direction of your design.</p>
 
-Use JavaScript to enhance the markup and style and push it as close as possible to the design.
+<pre><code>&lt;style&gt;
 
-Test along the way with JavaScript turned off to see your content and features are still readable.
+figure {
+  background: black;
+  padding: 1em;
+}
 
-You should now have a functioning website that will function and allow anyone to read the content, even if something goes wrong with the JavaScript or if the CSS doesn’t load.
+img {
+  border: 1px solid white;
+}
 
-If you’re doing something essential with AJAX, set it up with a regular HTML form first and then hijack it with JavaScript.
+caption {
+  margin-top: 1em;
+  color: white;
+}
 
-Break your JavaScript up into discrete bits and use feature detection to turn each one off if it’s not supported.
+&lt;/style&gt;</code></pre>
 
-Use CSS for animation and only add JavaScript if you need it for things like events and timing.
+<p>Use CSS for mouse overs, and be sure the content is still readable without them.</p>
 
-Use CSS for mouse overs, and be sure the content is still readable without them.
+<pre><code>&lt;style&gt;
 
-Use regular full pages instead of popups (hijack them with AJAX aftere the fact, if you want to present them as a popup).
+body:hover caption {
+  visibility: hidden;
+}
 
-  
-## Keep a library of patterns
+figure:hover caption {
+  visibility: visible;
+}
 
-## Users are in control on the Web
+&lt;/style&gt;</code></pre>
 
+<p>Test along the way to see if the content and page features work well on a few different size devices.</p>
 
+<p class="note"><a href="http://www.browserstack.com/">Browser Stack</a> will be useful for this stage.</p>
 
+<h2>And lastly scripting</h2>
 
+<p>Add JavaScript as needed for special interaction and features that aren’t available using HTML and CSS.</p>
+
+<pre><code>&lt;script&gt;
+
+document.querySelector("figure img").addEventListener("click", function(e) {
+  window.open(e.target.src);
+});
+
+&lt;/script&gt;</code></pre>
+
+<p>Try to leave things out of the markup that aren’t part of the core content. Keep it simple. </p>
+
+<p>If something requires JavaScript to operate and isn’t essential (there are other ways to accomplish the task), use JavaScript to add it later.</p>
+
+<pre><code>&lt;script type=&quot;text/template&quot;&gt;
+  content for JavaScript
+&lt;/script&gt;
+</code></pre>
+
+<p>Test along the way with JavaScript turned off to see your content and features are still readable.</p>
+
+<!--
+
+<p>Use JavaScript to enhance the markup and style and push it as close as possible to the design.</p>
+
+<p>Test along the way with JavaScript turned off to see your content and features are still readable.</p>
+
+<p>You should now have a functioning website that will function and allow anyone to read the content, even if something goes wrong with the JavaScript or if the CSS doesn’t load.</p>
+
+<p>If you’re doing something essential with AJAX, set it up with a regular HTML form first and then hijack it with JavaScript.</p>
+
+<p>Break your JavaScript up into discrete bits and use feature detection to turn each one off if it’s not supported.</p>
+
+<p>Use CSS for animation and only add JavaScript if you need it for things like events and timing.</p>
+
+<p>Use regular full pages instead of popups (hijack them with AJAX aftere the fact, if you want to present them as a popup).</p>
+
+<p>Add CSS for readability, and then for layout, and finally for device-specific things like hover states. Test on different devices along the way, to see if the content and features can be read and used.</p>
+
+<h2>Scripting</h2>
+
+<p>Add JavaScript as needed for special interaction and features that aren’t available using HTML and CSS.</p>
+
+<p>Use plain HTML elements as a starting point.</p>
+
+<p>Try to leave things out of the markup that aren’t part of the core content. Keep it simple. </p>
+
+<p>If something requires JavaScript to operate and isn’t essential (there are other ways to accomplish the task), use JavaScript to add it later.</p>
+
+<pre><code>&lt;script type=&quot;text/template&quot;&gt;
+  content for JavaScript
+&lt;/script&gt;
+</code></pre>
+-->
+
+<p class="next"><a href="elements.html">HTML Elements</a></p>
 
 </body>
 </html>

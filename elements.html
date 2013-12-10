@@ -3,88 +3,37 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <title>Basics Elements</title>
-  <link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
-  <style>
-    body {
-      background: white;
-      font: 125%/normal "Crimson Text", Georgia, Times, "Times New Roman", serif;
-      margin: 0;
-      padding: 1.5em;
-      color: #4d4d4d;
-    }
-    a {
-      color: #889faf;
-    }
-    body {
-      max-width: 40em;
-      margin: 0 auto;
-    }
-    section {
-      margin-top: 4em;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: normal;
-    }
-    h1 {
-      font-size: 200%;
-    }
-    h2 {
-      font-size: 150%;
-      margin-top: 2em;
-      margin-bottom: 0.5em;
-    }
-    pre {
-      background: #dae1be;
-      border-radius: 2px;
-      padding: 0.5em 1em;
-      position: relative;
-      white-space: pre-wrap;
-      word-wrap: break-word; /* For Internet Explorer */
-    }
-    .note {
-      color: #cd7c69;
-    }
-  </style>
-  <!--
-  <style type="text/css">
-    body {
-      font: 125%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: 2em;
-      background: rgb(244, 245, 244);
-      color: rgb(0, 1, 0); /* @text-color */
-    }
-    a[href] {
-      color: rgb(110, 160, 26); /* @link-color */
-      text-decoration: none;
-    }
-    a[href]:hover,
-    a[href]:active,
-    a[href]:focus {
-      text-decoration: underline;
-    }
-    a[href]:visited {
-      color: #333;
-    }
-  </style>
-  -->
+  <title>HTML Elements</title>
+  <link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css' />
+  <link href='shared.css' rel='stylesheet' type='text/css' />
 </head>
 <body>
 
-<h1>Basic Elements</h1>
+<h1>HTML Elements</h1>
 
-<h2>em</h2>
-<p>Use an “em” element to emphasize a portion of your text.</p>
-<pre><code>Van Gogh would’ve sold more than one painting if he’d put &lt;em&gt;tigers&lt;/em&gt; in them. –Hobbes</code></pre>
+<!--
+<p>There are two kinds of elements: inline and block.</p>
+
+<p>Block level elements act as containers and have margin around them by default.</p>
+
+<p>Inline elements go inside of block level elements.</p>
+-->
 
 <h2>strong</h2>
 <p>Use a strong element for text that would be spoken loudly or firmly in a conversation.</p>
-<pre><code>Van Gogh would’ve sold more than one painting if he’d put &lt;strong&gt;tigers&lt;/strong&gt; in them. –Calvin</code></pre>
+<pre><code>Spiff’s desperate gambit: To fly through the rings of planet zk-5 below! Our hero throttles the thrusters and &lt;strong&gt;dives&lt;/strong&gt;!</code></pre>
+
+<h2>em</h2>
+<p>Use an “em” element to emphasize words that should stand out from the text around them.</p>
+<pre><code>Van Gogh would’ve sold more than one painting if he’d put &lt;em&gt;tigers&lt;/em&gt; in them. –Hobbes</code></pre>
 
 <h2>a</h2>
 <p>Connect to other documents or parts of a page, using with a hyperlink. Links should have a label that describes the destination. Use a “title” attribute, if the label isn’t clear enough.</p>
-<pre><code>&lt;a&gt;…&lt;/a&gt;</code></pre>
+<pre><code>&lt;a href="http://en.wikipedia.org/wiki/Tiger" title="Tigers on Wikipedia"&gt;tigers&lt;/a&gt;</code></pre>
+<pre><code>&lt;a href="#tigers" title="Tigers on this page"&gt;tigers&lt;/a&gt;
+
+&lt;section id="tigers"&gt;…&lt;/section&gt;
+</code></pre>
 
 <h2>ol</h2>
 <p>Use an ordered list to add a list of items to your document, where the order of the items has significance.</p>
@@ -107,49 +56,146 @@
 <pre><code>&lt;p&gt;Spiff’s desperate gambit: To fly through the rings of planet zk-5 below! Our hero throttles the thrusters and dives!&lt;/p&gt;</code></pre>
 
 <h2>h1 … h6</h2>
-<p>Use headlines for text that begins a group of related text.</p>
+<p>Use headlines for text that begins a group of related content.</p>
 <pre><code>&lt;h1&gt;Pow!&lt;/h1&gt;
 &lt;p&gt;Oh no! Our hero is going down.&lt;/p&gt;</code></pre>
 
 <h2>section</h2>
 <p>Use a section to group related content together.</p>
-<pre><code>&lt;section&gt;…&lt;/section&gt;</code></pre>
+<pre><code>&lt;section&gt;
+  &lt;h1&gt;Pow!&lt;/h1&gt;
+  &lt;p&gt;Oh no! Our hero is going down.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
 
 <h2>article</h2>
-<p>Use an article instead of a section if the content stands on its own, and will make sense outside of the document.</p>
-<pre><code>&lt;article&gt;…&lt;/article&gt;</code></pre>
+<p>Use an article instead of a section if the content stands on its own, and will still make sense outside of the your document.</p>
+<pre><code>&lt;article&gt;
+  &lt;h1&gt;A Biography of Hobbes&lt;/h1&gt;
+  &lt;p&gt;Hobbes was a famous tiger. He lived with his friend Calvin. The End.&lt;/p&gt;
+&lt;/article&gt;</code></pre>
 
 <h2>header</h2>
 <p>Use a header element for headlines and other text that describes or helps navigate a section.</p>
-<pre><code>&lt;header&gt;…&lt;/header&gt;</code></pre>
-
-<h2>aside</h2>
-<p>Use an aside element instead of a section if the content is related to the other content on the page, but not part of it.</p>
-<pre><code>&lt;aside&gt;…&lt;/aside&gt;</code></pre>
+<pre><code>&lt;header&gt;
+  &lt;h2&gt;All About Tigers&lt;/h2&gt;
+  &lt;p&gt;By Bill Watterson&lt;/p&gt;
+&lt;/header&gt;</code></pre>
 
 <h2>nav</h2>
 <p>Use a navigation element for a group of links that serve as the primary way to get around a web site or document.</p>
-<pre><code>&lt;nav&gt;…&lt;/nav&gt;</code></pre>
+<pre><code>&lt;nav&gt;
+  &lt;h3&gt;Navigation&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="…"&gt;Tigers&lt;/li&gt;
+    &lt;li&gt;&lt;a href="…"&gt;Elephants&lt;/li&gt;
+    &lt;li&gt;&lt;a href="…"&gt;Zebras&lt;/li&gt;
+    &lt;li&gt;&lt;a href="…"&gt;Giraffes&lt;/li&gt;
+    &lt;li&gt;&lt;a href="…"&gt;Penguins&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+
+<h2>footer</h2>
+<p>Use a footer element for additional links or notes related to a section.</p>
+<pre><code>&lt;footer&gt;
+  &lt;h3&gt;More information&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="…"&gt;Visiting the Zoo&lt;/li&gt;
+    &lt;li&gt;&lt;a href="…"&gt;Hours&lt;/li&gt;
+    &lt;li&gt;&lt;a href="…"&gt;Maps&lt;/li&gt;
+    &lt;li&gt;&lt;a href="…"&gt;Contact Us&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul&gt;This site is maintained by the city of &lt;/ul&gt;
+&lt;/footer&gt;</code></pre>
+
+<h2>aside</h2>
+<p>Use an aside element instead of a section if the content is related to the other content on the page, but not part of it.</p>
+<pre><code>&lt;aside&gt;
+  &lt;h3&gt;These might also interest you&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="…"&gt;Lions&lt;/li&gt;
+    &lt;li&gt;&lt;a href="…"&gt;Leopards&lt;/li&gt;
+    &lt;li&gt;&lt;a href="…"&gt;Cougars&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/aside&gt;</code></pre>
 
 <h2>img</h2>
 <p>Add an image to your document with an img element. If you replace some text with the image, write the text in the image’s “alt” attribute. If the image is itself part of the content, place it near text that describes it.</p>
-<pre><code>&lt;img /&gt;</code></pre>
+<pre><code>Van Gogh would’ve sold more than one painting if he’d put &lt;img src="http://amazon.com/tigers.jpg" alt="tigers" /&gt; in them.</code></pre>
 
 <h2>audio</h2>
 <p>Use an audio element to add a song to your document. Place the audio near text that describes it.</p>
-<pre><code>&lt;audio&gt;…&lt;/audio&gt;</code></pre>
+<pre><code>&lt;audio src="http://amazon.com/tigers.mp3"&gt;&lt;/audio&gt;</code></pre>
 
 <h2>video</h2>
 <p>Use a video element to add a movie to your document. Place the video near text that describes it.</p>
-<pre><code>&lt;video&gt;…&lt;/video&gt;</code></pre>
+<pre><code>&lt;video src="http://amazon.com/tigers.mp4"&gt;&lt;/video&gt;</code></pre>
 
-<h2>form</h2>
-<p>Use a form to group together fields and buttons.</p>
-<pre><code>&lt;form&gt;…&lt;/form&gt;</code></pre>
+<h2>time</h2>
+<p>Use a time element for dates and times</p>
+<pre><code>The penguin exhibit will open on &lt;time datetime="2014-01-15"&gt;January 15, 2014&lt;/time&gt;</code>.</pre>
 
 <h2>input, select, textarea, and button</h2>
 <p>Use these to add fields and buttons within the form for gathering data.</p>
-<pre><code>&lt;input /&gt;</code></pre>
+<pre><code>&lt;label&gt;
+  What’s your favorite color?&lt;br /&gt;
+  &lt;input type=&quot;text&quot; name=&quot;color&quot; /&gt;
+&lt;/label&gt;</code></pre>
+
+<pre><code>&lt;label&gt;
+  What’s your favorite animal?&lt;br /&gt;
+  &lt;select name=&quot;animal&quot;&gt;
+    &lt;option&gt;Tiger&lt;/option&gt;
+    &lt;option&gt;Elephant&lt;/option&gt;
+    &lt;option&gt;Zebra&lt;/option&gt;
+    &lt;option&gt;Giraffe&lt;/option&gt;
+    &lt;option&gt;Penguin&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/label&gt;</code></pre>
+
+<pre><code>&lt;button type=&quot;submit&quot;&gt;Send&lt;/button&gt;</code></pre>
+
+<h2>form</h2>
+<p>Use a form to group together fields and buttons.</p>
+<pre><code>&lt;form action="/submit" method="post"&gt;
+
+  &lt;p&gt;
+    &lt;label&gt;
+      What’s your favorite color?&lt;br /&gt;
+      &lt;input type=&quot;text&quot; name=&quot;color&quot; /&gt;
+    &lt;/label&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;label&gt;
+      What’s your favorite animal?&lt;br /&gt;
+      &lt;select name=&quot;animal&quot;&gt;
+        &lt;option&gt;Tiger&lt;/option&gt;
+        &lt;option&gt;Elephant&lt;/option&gt;
+        &lt;option&gt;Zebra&lt;/option&gt;
+        &lt;option&gt;Giraffe&lt;/option&gt;
+        &lt;option&gt;Penguin&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/label&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;button type=&quot;submit&quot;&gt;Send&lt;/button&gt;
+  &lt;/p&gt;
+
+&lt;/form&gt;</code></pre>
+
+<footer>
+  <h2>References</h2>
+  <ul>
+    <li><a href="http://www.learningwebdesign.com">Learning Web Design by Jennifer Robbins</a></li>
+    <li><a href="http://docs.webplatform.org/wiki/html/elements" title="Element Reference on Web Platform">Web Platform</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference" title="Element Reference on MDN">MDN</a></li>
+  </ul>
+</footer>
+
+<!--
+<p class="next"><a href="example.html">And now an example</a></p>
+-->
 
 </body>
 </html>
