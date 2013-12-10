@@ -1,0 +1,155 @@
+
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Basics Elements</title>
+  <link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      background: white;
+      font: 125%/normal "Crimson Text", Georgia, Times, "Times New Roman", serif;
+      margin: 0;
+      padding: 1.5em;
+      color: #4d4d4d;
+    }
+    a {
+      color: #889faf;
+    }
+    body {
+      max-width: 40em;
+      margin: 0 auto;
+    }
+    section {
+      margin-top: 4em;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: normal;
+    }
+    h1 {
+      font-size: 200%;
+    }
+    h2 {
+      font-size: 150%;
+      margin-top: 2em;
+      margin-bottom: 0.5em;
+    }
+    pre {
+      background: #dae1be;
+      border-radius: 2px;
+      padding: 0.5em 1em;
+      position: relative;
+      white-space: pre-wrap;
+      word-wrap: break-word; /* For Internet Explorer */
+    }
+    .note {
+      color: #cd7c69;
+    }
+  </style>
+  <!--
+  <style type="text/css">
+    body {
+      font: 125%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 2em;
+      background: rgb(244, 245, 244);
+      color: rgb(0, 1, 0); /* @text-color */
+    }
+    a[href] {
+      color: rgb(110, 160, 26); /* @link-color */
+      text-decoration: none;
+    }
+    a[href]:hover,
+    a[href]:active,
+    a[href]:focus {
+      text-decoration: underline;
+    }
+    a[href]:visited {
+      color: #333;
+    }
+  </style>
+  -->
+</head>
+<body>
+
+<h1>Basic Elements</h1>
+
+<h2>em</h2>
+<p>Use an “em” element to emphasize a portion of your text.</p>
+<pre><code>Van Gogh would’ve sold more than one painting if he’d put &lt;em&gt;tigers&lt;/em&gt; in them. –Hobbes</code></pre>
+
+<h2>strong</h2>
+<p>Use a strong element for text that would be spoken loudly or firmly in a conversation.</p>
+<pre><code>Van Gogh would’ve sold more than one painting if he’d put &lt;strong&gt;tigers&lt;/strong&gt; in them. –Calvin</code></pre>
+
+<h2>a</h2>
+<p>Connect to other documents or parts of a page, using with a hyperlink. Links should have a label that describes the destination. Use a “title” attribute, if the label isn’t clear enough.</p>
+<pre><code>&lt;a&gt;…&lt;/a&gt;</code></pre>
+
+<h2>ol</h2>
+<p>Use an ordered list to add a list of items to your document, where the order of the items has significance.</p>
+<pre><code>&lt;ol&gt;
+  &lt;li&gt;Item&lt;/li&gt;
+  &lt;li&gt;Item&lt;/li&gt;
+  &lt;li&gt;Item&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+<h2>ul</h2>
+<p>Use an unordered list if the order is not significant.</p>
+<pre><code>&lt;ul&gt;
+  &lt;li&gt;Item A&lt;/li&gt;
+  &lt;li&gt;Item B&lt;/li&gt;
+  &lt;li&gt;Item C&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+<h2>p</h2>
+<p>Use paragraphs for text that represents a connected thought; and that would have a pause before or after if you were speaking it in conversation.</p>
+<pre><code>&lt;p&gt;Spiff’s desperate gambit: To fly through the rings of planet zk-5 below! Our hero throttles the thrusters and dives!&lt;/p&gt;</code></pre>
+
+<h2>h1 … h6</h2>
+<p>Use headlines for text that begins a group of related text.</p>
+<pre><code>&lt;h1&gt;Pow!&lt;/h1&gt;
+&lt;p&gt;Oh no! Our hero is going down.&lt;/p&gt;</code></pre>
+
+<h2>section</h2>
+<p>Use a section to group related content together.</p>
+<pre><code>&lt;section&gt;…&lt;/section&gt;</code></pre>
+
+<h2>article</h2>
+<p>Use an article instead of a section if the content stands on its own, and will make sense outside of the document.</p>
+<pre><code>&lt;article&gt;…&lt;/article&gt;</code></pre>
+
+<h2>header</h2>
+<p>Use a header element for headlines and other text that describes or helps navigate a section.</p>
+<pre><code>&lt;header&gt;…&lt;/header&gt;</code></pre>
+
+<h2>aside</h2>
+<p>Use an aside element instead of a section if the content is related to the other content on the page, but not part of it.</p>
+<pre><code>&lt;aside&gt;…&lt;/aside&gt;</code></pre>
+
+<h2>nav</h2>
+<p>Use a navigation element for a group of links that serve as the primary way to get around a web site or document.</p>
+<pre><code>&lt;nav&gt;…&lt;/nav&gt;</code></pre>
+
+<h2>img</h2>
+<p>Add an image to your document with an img element. If you replace some text with the image, write the text in the image’s “alt” attribute. If the image is itself part of the content, place it near text that describes it.</p>
+<pre><code>&lt;img /&gt;</code></pre>
+
+<h2>audio</h2>
+<p>Use an audio element to add a song to your document. Place the audio near text that describes it.</p>
+<pre><code>&lt;audio&gt;…&lt;/audio&gt;</code></pre>
+
+<h2>video</h2>
+<p>Use a video element to add a movie to your document. Place the video near text that describes it.</p>
+<pre><code>&lt;video&gt;…&lt;/video&gt;</code></pre>
+
+<h2>form</h2>
+<p>Use a form to group together fields and buttons.</p>
+<pre><code>&lt;form&gt;…&lt;/form&gt;</code></pre>
+
+<h2>input, select, textarea, and button</h2>
+<p>Use these to add fields and buttons within the form for gathering data.</p>
+<pre><code>&lt;input /&gt;</code></pre>
+
+</body>
+</html>

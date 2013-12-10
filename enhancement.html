@@ -1,0 +1,83 @@
+
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Progressive</title>
+  <style type="text/css">
+    body {
+      font: 125%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 2em;
+      background: rgb(244, 245, 244);
+      color: rgb(0, 1, 0); /* @text-color */
+    }
+    a[href] {
+      color: rgb(110, 160, 26); /* @link-color */
+      text-decoration: none;
+    }
+    a[href]:hover,
+    a[href]:active,
+    a[href]:focus {
+      text-decoration: underline;
+    }
+    a[href]:visited {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Progressive</h1>
+
+## Building a Website in Layers
+
+
+Content First
+Start by deciding what content and features you want to have. Add them to your document as plain text.
+
+Styling
+Add CSS for readability, and then for layout, and finally for device-specific things like hover states. Test on different devices along the way, to see if the content and features can be read and used.
+
+Scripting
+Add JavaScript as needed for special interaction and features that aren’t available using HTML and CSS.
+
+Use plain HTML elements as a starting point.
+
+Try to leave things out of the markup that aren’t part of the core content. Keep it simple. 
+
+If something requires JavaScript to operate and isn’t essential (there are other ways to accomplish the task), use JavaScript to add it later.
+
+[Example with JavaScript template blocks]
+
+Use styles to move the markup in the direction of your design.
+
+Test along the way to see if the content and page features work well on a few different size devices.
+
+Use JavaScript to enhance the markup and style and push it as close as possible to the design.
+
+Test along the way with JavaScript turned off to see your content and features are still readable.
+
+You should now have a functioning website that will function and allow anyone to read the content, even if something goes wrong with the JavaScript or if the CSS doesn’t load.
+
+If you’re doing something essential with AJAX, set it up with a regular HTML form first and then hijack it with JavaScript.
+
+Break your JavaScript up into discrete bits and use feature detection to turn each one off if it’s not supported.
+
+Use CSS for animation and only add JavaScript if you need it for things like events and timing.
+
+Use CSS for mouse overs, and be sure the content is still readable without them.
+
+Use regular full pages instead of popups (hijack them with AJAX aftere the fact, if you want to present them as a popup).
+
+  
+## Keep a library of patterns
+
+## Users are in control on the Web
+
+
+
+
+
+</body>
+</html>
