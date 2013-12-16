@@ -74,8 +74,13 @@ figure:hover figcaption {
 
 <pre><code>&lt;script&gt;
 
-document.querySelector("figure img").addEventListener("click", function(e) {
-  window.open(e.target.src);
+document.querySelector(".play").addEventListener("click", function(e) {
+  startSound();
+  e.preventDefault();
+});
+document.querySelector(".stop").addEventListener("click", function(e) {
+  stopSound();
+  e.preventDefault();
 });
 
 &lt;/script&gt;</code></pre>
@@ -84,8 +89,13 @@ document.querySelector("figure img").addEventListener("click", function(e) {
 
 <p>If something requires JavaScript to operate and isn’t essential (there are other ways to accomplish the task), use JavaScript to add it later.</p>
 
-<pre><code>&lt;script type=&quot;text/template&quot;&gt;
-  content for JavaScript
+<pre><code>&lt;script type=&quot;text/template&quot; id=&quot;audio-controls&quot;&gt;
+
+&lt;ul class=&quot;controls&quot;&gt;
+  &lt;li class=&quot;play&quot;&gt;&lt;a href=&quot;#play&quot;&gt;Play&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;stop&quot;&gt;&lt;a href=&quot;#stop&quot;&gt;Stop&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;/script&gt;
 </code></pre>
 

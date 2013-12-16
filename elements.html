@@ -135,7 +135,7 @@
 <pre><code>The penguin exhibit will open on &lt;time datetime="2014-01-15"&gt;January 15, 2014&lt;/time&gt;</code>.</pre>
 
 <h2>input, select, textarea, and button</h2>
-<p>Use these to add fields and buttons within the form for gathering data.</p>
+<p>Use these to add fields and buttons for gathering data. Be sure to include a label that describes each field.</p>
 <pre><code>&lt;label&gt;
   What’s your favorite color?&lt;br /&gt;
   &lt;input type=&quot;text&quot; name=&quot;color&quot; /&gt;
@@ -155,33 +155,13 @@
 <pre><code>&lt;button type=&quot;submit&quot;&gt;Send&lt;/button&gt;</code></pre>
 
 <h2>form</h2>
-<p>Use a form to group together fields and buttons.</p>
-<pre><code>&lt;form action="/submit" method="post"&gt;
-
-  &lt;p&gt;
-    &lt;label&gt;
-      What’s your favorite color?&lt;br /&gt;
-      &lt;input type=&quot;text&quot; name=&quot;color&quot; /&gt;
-    &lt;/label&gt;
-  &lt;/p&gt;
-
-  &lt;p&gt;
-    &lt;label&gt;
-      What’s your favorite animal?&lt;br /&gt;
-      &lt;select name=&quot;animal&quot;&gt;
-        &lt;option&gt;Tiger&lt;/option&gt;
-        &lt;option&gt;Elephant&lt;/option&gt;
-        &lt;option&gt;Zebra&lt;/option&gt;
-        &lt;option&gt;Giraffe&lt;/option&gt;
-        &lt;option&gt;Penguin&lt;/option&gt;
-      &lt;/select&gt;
-    &lt;/label&gt;
-  &lt;/p&gt;
-
-  &lt;p&gt;
-    &lt;button type=&quot;submit&quot;&gt;Send&lt;/button&gt;
-  &lt;/p&gt;
-
+<p>Use a form to group fields and buttons together.</p>
+<pre><code>&lt;form action="/search" method="post"&gt;
+  &lt;label&gt;
+    What are you looking for?&lt;br /&gt;
+    &lt;input type=&quot;text&quot; name=&quot;keywords&quot; /&gt;
+  &lt;/label&gt;
+  &lt;button type=&quot;submit&quot;&gt;Search&lt;/button&gt;
 &lt;/form&gt;</code></pre>
 
 <footer>
